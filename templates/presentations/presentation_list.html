@@ -1,0 +1,52 @@
+{% extends "base_page.html" %}
+
+
+{% block page %}
+    <div class="events top-shift">
+        <div class="row">
+            <div class="card-columns">
+                {% regroup presentation_list by date as presentations %}
+                {% for date in presentations %}
+                <div class="event card">
+                    <div class="card-body">
+                        <div class="event-title">Pyİstanbul 11 Temmuz Etkinliği</div>
+                        <!-- 
+                        TODO: Profile entegrasyonu sonrasi burasinin duzenlenmesi gerekiyor
+
+                        <div class="speakers">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid logo" src="http://lorempixel.com/86/86/people/">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid logo" src="http://lorempixel.com/86/86/people/">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img class="img-fluid logo" src="http://lorempixel.com/86/86/people/">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        -->
+                        <div class="presentations">
+                            {% for presentation in date.list %}
+                            <div class="presentation">
+                                <a href="{{ presentation.link }}" target="_blank">
+                                    <div class="presentation-title">{{ presentation.title }}</div>
+                                </a>
+                                <div class="speaker-name">{{ presentation.owner }}</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

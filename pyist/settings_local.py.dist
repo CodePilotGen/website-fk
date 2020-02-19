@@ -1,0 +1,3 @@
+from pyist.settings import *
+
+DEBUG = True
