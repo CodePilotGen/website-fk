@@ -23,7 +23,7 @@ $ python manage.py test -v2
 
 ### License
 
-Copyright © 2013 Python Istanbul
+Copyright © 2019 Python I.Sultanov
 
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
